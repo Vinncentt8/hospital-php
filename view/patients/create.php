@@ -1,3 +1,5 @@
+<fieldset>
+
 <div class="container">
     <form action="<?= URL ?>patient/create" method="post">
     
@@ -13,3 +15,4 @@
     </form>
 
 </div>
+</fieldset>
