@@ -1,6 +1,10 @@
 <?php
 
+require(ROOT . "model/SpeciesModel.php");
+
 function index()
 {
-	render("Hospital/index");	
+    render("species/overview", array(
+        'species' => getSpecies()
+    ));
 }

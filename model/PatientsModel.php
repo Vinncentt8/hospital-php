@@ -1,5 +1,6 @@
 <?php
-function getInformation() 
+
+function getPatients() 
 {
 	$db = openDatabaseConnection();
 

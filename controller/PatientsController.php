@@ -1,6 +1,10 @@
 <?php
 
+require(ROOT . "model/PatientsModel.php");
+
 function index()
 {
-	echo "gelukt in patients controller...";
+    render("patients/overview", array(
+        'patients' => getPatients()
+    ));
 }
