@@ -17,3 +17,5 @@
 </div>
 
 </fieldset>
+
+	<p><a href="http://localhost/Hospital-Framework/">Home</a></p>
