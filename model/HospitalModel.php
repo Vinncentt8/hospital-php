@@ -13,5 +13,14 @@ function getInformation()
 }
 
 
+function deleteHospital($id)
+{
+	$db = openDatabaseConnection();
+
+	$sql = "DELETE FROM clients WHERE id = :id";
+	$query = $db->prepare($sql);
+	$query->bindParam(":id", $id);
+	$query->execute();
+}
 
 ?>

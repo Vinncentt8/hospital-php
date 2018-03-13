@@ -38,10 +38,7 @@ echo "</tr>";
 
 
 
-	<ul>
-		<li><a href="#">Create</a></li>
-		<li><a href="#">Home</a></li>
-	</ul>
-
+		<p><a href="#">Create</a></p>
+		<p><a href="http://localhost/Hospital-Framework/">Home</a></p>
 
 

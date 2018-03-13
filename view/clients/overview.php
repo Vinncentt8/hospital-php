@@ -1,18 +1,16 @@
 <h1>Hospital</h1>
 	<ul>
-		<li><a href="patients/index">Patiënts</a></li>
-		<li><a href="clients/index">Clients</a></li>
-		<li><a href="species/index">Species</a></li>
+		<li><a href="http://localhost/Hospital-Framework/patients/index">Patiënts</a></li>
+		<li><a href="http://localhost/Hospital-Framework/clients/index">Clients</a></li>
+		<li><a href="http://localhost/Hospital-Framework/species/index">Species</a></li>
 	</ul>
 
 	<h2>Clients</h2>
 	<table>
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th>Species</th>
-				<th>Status</th>
-				<th>Client</th>
+				<th>First Name</th>
+				<th>Last Name</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
@@ -26,6 +24,16 @@ foreach ($clients as $client) {
 echo "<tr>";
 echo "<th>" . $client['client_firstname'] . "</th>";
 echo "<th>" . $client['client_lastname']  . "</th>";
+echo "<td class='center'>" . "<a href='#'>edit</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "clients/delete/". $client['client_id'] ."'>delete</a></td>";
 echo "</tr>";
 }
 ?>
+
+</table>
+
+
+	
+		<p><a href="http://localhost/Hospital-Framework/clients/create">Create</a></p>
+		<p><a href="http://localhost/Hospital-Framework/">Home</a></p>
+	

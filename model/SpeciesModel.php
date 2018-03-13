@@ -15,6 +15,17 @@ function getSpecies()
 }
 
 
+function deleteSpecies($id)
+{
+	$db = openDatabaseConnection();
+
+	$sql = "DELETE FROM species WHERE species_id = :id";
+	$query = $db->prepare($sql);
+	$query->bindParam(":id", $id);
+	$query->execute();
+	return true;
+}
+
 
 
 ?>

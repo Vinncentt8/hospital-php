@@ -8,3 +8,15 @@ function index()
         'clients' => getInformation()
     ));
 }
+
+
+
+
+function delete($id)
+{
+	if (!deleteClients($id)) {
+		header("Location:" . URL . "error/index");
+		exit();
+	}
+	header("Location:" . URL . "clients/index");
+}

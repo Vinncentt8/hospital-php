@@ -1,4 +1,5 @@
 <?php
+
 function getClients()
 {
 	$db = openDatabaseConnection();
@@ -12,7 +13,16 @@ function getClients()
 	return $query->fetchAll();
 }
 
+function deleteClients($id)
+{
+	$db = openDatabaseConnection();
 
+	$sql = "INSERT INTO patients WHERE client_id = :id";
+	$query = $db->prepare($sql);
+	$query->bindParam(":id", $id);
+	$query->execute();
+	return true;
+}
 
 
 

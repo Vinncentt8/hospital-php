@@ -1,8 +1,8 @@
 <h1>Hospital</h1>
 	<ul>
-		<li><a href="patients/index">Patiënts</a></li>
-		<li><a href="clients/index">Clients</a></li>
-		<li><a href="species/index">Species</a></li>
+		<li><a href="http://localhost/Hospital-Framework/patients/index">Patiënts</a></li>
+		<li><a href="http://localhost/Hospital-Framework/clients/index">Clients</a></li>
+		<li><a href="http://localhost/Hospital-Framework/species/index">Species</a></li>
 	</ul>
 
 	<h2>Patiënts</h2>
@@ -10,9 +10,7 @@
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Species</th>
 				<th>Status</th>
-				<th>Client</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
@@ -26,6 +24,15 @@ foreach ($patients as $patient) {
 echo "<tr>";
 echo "<th>" . $patient['patient_name']  . "</th>";
 echo "<th>" . $patient['patient_status']  . "</th>";
+echo "<td class='center'>" . "<a href='#'>edit</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "patients/delete/". $patient['patient_id'] ."'>delete</a></td>";
 echo "</tr>";
 }
+
 ?>
+
+</table>
+
+
+		<p><a href="http://localhost/Hospital-Framework/patients/create">Create</a></p>
+		<p><a href="http://localhost/Hospital-Framework/">Home</a></p>

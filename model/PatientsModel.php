@@ -14,5 +14,14 @@ function getPatients()
 }
 
 
+function deletePatients($id)
+{
+	$db = openDatabaseConnection();
 
-?>
+	$sql = "DELETE FROM patients WHERE patient_id = :id";
+	$query = $db->prepare($sql);
+	$query->bindParam(":id", $id);
+	$query->execute();
+	return true;
+}
+
