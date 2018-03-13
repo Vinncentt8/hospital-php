@@ -24,4 +24,4 @@ function deletePatients($id)
 	$query->execute();
 	return true;
 }
-
+?>

@@ -11,10 +11,10 @@
 		<thead>
 			<tr>
 				<th>Name</th>
+				<th>Last name</th>
 				<th>Species</th>
 				<th>Status</th>
 				<th>Client</th>
-				<th colspan="2">Action</th>
 			</tr>
 		</thead>
 		</tbody>
