@@ -24,4 +24,6 @@ function deleteHospital($id)
 	$query->execute();
 }
 
+
+
 ?>

@@ -15,9 +15,11 @@ function create()
 	render("patients/create");
 }
 
+
+
 function createSave()
 {
-	if (!createPatients()) {
+	if (!saveCreatedPatient($_POST)) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}

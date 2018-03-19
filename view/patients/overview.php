@@ -26,7 +26,7 @@ echo "<tr>";
 echo "<th>" . $patient['patient_id'] . "</th>";
 echo "<th>" . $patient['patient_name']  . "</th>";
 echo "<th>" . $patient['patient_status']  . "</th>";
-echo "<td class='center'>" . "<a href='#'>edit</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "patients/update/" . $patient['patient_id'] . "'>edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "patients/delete/". $patient['patient_id'] ."'>delete</a></td>";
 echo "</tr>";
 }

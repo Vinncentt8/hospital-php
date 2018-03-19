@@ -6,10 +6,10 @@ echo "<h2>" . "Aanmaken" . "</h2>";
 <fieldset>
 
 <div class="container">
-    <form action="<?=URL?>clients/create" method="post">
+    <form action="<?=URL?>patients/createSave" method="post">
         <label for="person">Naam</label>
-        <input required type="text" type="text" name="name" placeholder="Naam">
-        <input required type="text" type="text" name="status" placeholder="status">
+        <input required type="text" type="text" name="patient_name" placeholder="Naam">
+        <input required type="text" type="text" name="patient_status" placeholder="status">
         <input type="submit" name="submit" value="Registreer Patient">
     </form>
 

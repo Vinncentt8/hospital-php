@@ -24,4 +24,16 @@ function deletePatients($id)
 	$query->execute();
 	return true;
 }
+
+function saveCreatedPatient($saves){
+	$db = openDatabaseConnection();
+
+	$sql = "INSERT INTO patient (patient_name, patient_status) VALUES (:patient_name, :patient_status);";
+	// var_dump($answers);
+	$query = $db->prepare($sql);
+	$query->bindParam(":patient_name", $saves['patient_name']);
+	$query->bindParam(":patient_status", $saves['patient_status']);
+	$query->execute();
+	return true;
+}
 ?>

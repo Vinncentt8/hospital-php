@@ -21,7 +21,7 @@ function create()
 
 function createSave()
 {
-	if (!createClients()) {
+	if (!saveCreatedClient($_POST)) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
