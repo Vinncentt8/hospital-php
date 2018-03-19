@@ -8,17 +8,7 @@ function index()
         'patients' => getPatients()
     ));
 }
-
-
-
-function delete($id)
-{
-	if (!deletePatients($id)) {
-		header("Location:" . URL . "error/error_404");
-		exit();
-	}
-	header("Location:" . URL . "patients/index");
-}
+// ---------------------------------------------------------------------------------------------
 
 function create()
 {
@@ -33,3 +23,17 @@ function createSave()
 	}
 	header("Location:" . URL . "patients/index");
 }
+
+
+
+// ---------------------------------------------------------------------------------------------
+
+function delete($id)
+{
+	if (!deletePatients($id)) {
+		header("Location:" . URL . "error/error_404");
+		exit();
+	}
+	header("Location:" . URL . "patients/index");
+}
+

@@ -9,6 +9,7 @@
 	<table>
 		<thead>
 			<tr>
+				<th>ID</th>
 				<th>Species</th>
 				<th colspan="2">Action</th>
 			</tr>
@@ -21,6 +22,7 @@
 
 foreach ($species as $specie) {
 echo "<tr>";
+echo "<th>" . $specie['species_id'] . "</th>";
 echo "<th>" . $specie['species_description']  . "</th>";
 echo "<td class='center'>" . "<a href='#'>edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "species/delete/". $specie['species_id'] ."'>delete</a></td>";

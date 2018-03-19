@@ -9,14 +9,7 @@ function index()
     ));
 }
 
-function delete($id)
-{
-	if (!deleteSpecies($id)) {
-		header("Location:" . URL . "error/error_404");
-		exit();
-	}
-	header("Location:" . URL . "species/index");
-}
+// ---------------------------------------------------------------------------------------------
 
 function create()
 {
@@ -31,3 +24,17 @@ function createSave()
 	}
 	header("Location:" . URL . "species/index");
 }
+
+
+// ---------------------------------------------------------------------------------------------
+
+
+function delete($id)
+{
+	if (!deleteSpecies($id)) {
+		header("Location:" . URL . "error/error_404");
+		exit();
+	}
+	header("Location:" . URL . "species/index");
+}
+

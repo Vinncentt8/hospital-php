@@ -1,20 +1,22 @@
+<?php
+echo "<h1>" . "Je bent nu in species:" . "</h1>";
+echo "<h2>" . "Aanmaken" . "</h2>";
+?>
+
 <fieldset>
 
 <div class="container">
-    <form action="<?= URL ?>patient/create" method="post"><!-- opslaan via post -->
-    
-        <input type="text" name="firstname" placeholder="Name species">
-        <input type="text" name="discription" placeholder="Issues">
-        <select name="gender">
-            <option value="Dog">Dog</option>
-            <option value="cat">Cat</option>  
-        </select>
-
-        <input type="submit" value="Verzenden">
+    <form action="<?=URL?>clients/create" method="post">
+        <label for="person">Species</label>
+        <input required type="text" type="text" name="species" placeholder="Species">
+        <input type="submit" name="submit" value="Registreer Specie">
     
     </form>
 
 </div>
+
 </fieldset>
 
-	<p><a href="http://localhost/Hospital-Framework/">Home</a></p>
+
+
+    <p><a href="http://localhost/Hospital-Framework/">Home</a></p>

@@ -9,6 +9,7 @@
 	<table>
 		<thead>
 			<tr>
+				<th>ID</th>
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th colspan="2">Action</th>
@@ -22,10 +23,11 @@
 
 foreach ($clients as $client) {
 echo "<tr>";
+echo "<th>" . $client['client_id'] . "</th>";
 echo "<th>" . $client['client_firstname'] . "</th>";
 echo "<th>" . $client['client_lastname']  . "</th>";
-echo "<td class='center'>" . "<a href='#'>edit</a></td>";
-echo "<td class='center'>" . "<a href='" . URL . "clients/delete/". $client['client_id'] ."'>delete</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "clients/update/" . $client['client_id'] . "'>edit</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "clients/delete/" . $client['client_id'] .  "'>delete</a></td>";
 echo "</tr>";
 }
 ?>
