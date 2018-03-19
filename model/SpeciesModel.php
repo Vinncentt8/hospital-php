@@ -14,6 +14,17 @@ function getSpecies()
 
 }
 
+function saveCreatedSpecie($save){
+	$db = openDatabaseConnection();
+
+	$sql = "INSERT INTO species (species_description) VALUES (:species_description);";
+	$query = $db->prepare($sql);
+	$query->bindParam(":species_description", $save['species_description']);
+	$query->execute();
+	return true;
+}
+
+
 
 function deleteSpecies($id)
 {

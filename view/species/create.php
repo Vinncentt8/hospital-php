@@ -6,9 +6,9 @@ echo "<h2>" . "Aanmaken" . "</h2>";
 <fieldset>
 
 <div class="container">
-    <form action="<?=URL?>clients/create" method="post">
+    <form action="<?=URL?>species/createSave" method="post">
         <label for="person">Species</label>
-        <input required type="text" type="text" name="species" placeholder="Species">
+        <input required type="text" type="text" name="species_description" placeholder="Species">
         <input type="submit" name="submit" value="Registreer Specie">
     
     </form>

@@ -26,8 +26,8 @@ echo "<tr>";
 echo "<th>" . $client['client_id'] . "</th>";
 echo "<th>" . $client['client_firstname'] . "</th>";
 echo "<th>" . $client['client_lastname']  . "</th>";
-echo "<td class='center'>" . "<a href='" . URL . "clients/update/" . $client['client_id'] . "'>edit</a></td>";
-echo "<td class='center'>" . "<a href='" . URL . "clients/delete/" . $client['client_id'] .  "'>delete</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "clients/update/" . $client['client_id'] . "'>Edit</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "clients/delete/" . $client['client_id'] .  "'>Delete</a></td>";
 echo "</tr>";
 }
 ?>

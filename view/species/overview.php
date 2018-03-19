@@ -5,7 +5,7 @@
 		<li><a href="http://localhost/Hospital-Framework/species/index">Species</a></li>
 	</ul>
 
-	<h2>Patiënts</h2>
+	<h2>Species</h2>
 	<table>
 		<thead>
 			<tr>
@@ -24,8 +24,8 @@ foreach ($species as $specie) {
 echo "<tr>";
 echo "<th>" . $specie['species_id'] . "</th>";
 echo "<th>" . $specie['species_description']  . "</th>";
-echo "<td class='center'>" . "<a href='#'>edit</a></td>";
-echo "<td class='center'>" . "<a href='" . URL . "species/delete/". $specie['species_id'] ."'>delete</a></td>";
+echo "<td class='center'>" . "<a href='#'>Edit</a></td>";
+echo "<td class='center'>" . "<a href='" . URL . "species/delete/". $specie['species_id'] ."'>Delete</a></td>";
 echo "</tr>";
 }
 ?>

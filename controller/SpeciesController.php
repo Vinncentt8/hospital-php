@@ -18,7 +18,7 @@ function create()
 
 function createSave()
 {
-	if (!createSpecies()) {
+	if (!saveCreatedSpecie($_POST)) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}

@@ -37,8 +37,3 @@ echo "</tr>";
 </table>
 
 
-
-		<p><a href="#">Create</a></p>
-		<p><a href="http://localhost/Hospital-Framework/">Home</a></p>
-
-
