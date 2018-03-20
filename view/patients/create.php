@@ -1,15 +1,18 @@
 <?php
-echo "<h1>" . "Je bent nu in patients:" . "</h1>";
-echo "<h2>" . "Aanmaken" . "</h2>";
+echo "<h1>" . "Add patient:" . "</h1>";
 ?>
 
 <fieldset>
 
 <div class="container">
     <form action="<?=URL?>patients/createSave" method="post">
-        <label for="person">Naam</label>
-        <input required type="text" type="text" name="patient_name" placeholder="Naam">
-        <input required type="text" type="text" name="patient_status" placeholder="status">
+        <label for="person">Name:</label>
+        <input required type="text" type="text" name="patient_name" placeholder="Name"><br>
+        <br>
+        <label>Status:</label>
+        <input required type="text" type="text" name="patient_status" placeholder="Status">
+        <br>
+        <br>
         <input type="submit" name="submit" value="Registreer Patient">
     </form>
 
@@ -19,4 +22,4 @@ echo "<h2>" . "Aanmaken" . "</h2>";
 
 
 
-    <p><a href="http://localhost/Hospital-Framework/">Home</a></p>
+	<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>

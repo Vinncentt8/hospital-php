@@ -48,6 +48,8 @@ function updateSave()
 	header("Location:" . URL . "patients/index");
 } 
 
+// ---------------------------------------------------------------------------------------------
+
 
 function delete($id)
 {

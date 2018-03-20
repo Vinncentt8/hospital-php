@@ -17,8 +17,6 @@ function create()
 }
 
 
-
-
 function createSave()
 {
 	if (!saveCreatedClient($_POST)) {
@@ -37,19 +35,6 @@ function update($id)
 		'clients' => getClients($id)
 	));
 }
-
-// function update($id)
-// {
-// 	//$data = getClients($id);
-
-// 	//var_dump($data);
-// 	render("clients/update", $data);
-
-
-// 	render("clients/update", array(
-// 		'clients' => getClient($id)
-// 	));
-// }
 
 
 function updateSave()

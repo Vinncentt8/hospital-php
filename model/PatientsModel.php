@@ -29,7 +29,7 @@ function deletePatients($id)
 function saveCreatedPatient($saves){
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO patient (patient_name, patient_status) VALUES (:patient_name, :patient_status);";
+	$sql = "INSERT INTO patients (patient_name, patient_status) VALUES (:patient_name, :patient_status);";
 	// var_dump($answers);
 	$query = $db->prepare($sql);
 	$query->bindParam(":patient_name", $saves['patient_name']);

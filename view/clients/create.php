@@ -1,15 +1,21 @@
+<fieldset>
+
+
 <?php
-echo "<h1>" . "Je bent nu in clients:" . "</h1>";
-echo "<h2>" . "Aanmaken" . "</h2>";
+echo "<h1>" . "Create clients:" . "</h1>";
 ?>
 
-<fieldset>
+
 
 <div class="container">
     <form action="<?=URL?>clients/createSave" method="post">
         <label for="person">Naam</label>
-        <input required type="text" type="text" name="client_firstname" placeholder="Voornaam">
-        <input required type="text" type="text" name="client_lastname" placeholder="Achternaam">
+        <input required type="text" type="text" name="client_firstname" placeholder="Name"><br>
+        <br>
+        <label>Last name</label>
+        <input required type="text" type="text" name="client_lastname" placeholder="Last name">
+        <br>
+        <br>
         <input type="submit" name="submit" value="Registreer Client">
     
     </form>
@@ -18,7 +24,9 @@ echo "<h2>" . "Aanmaken" . "</h2>";
 
 </fieldset>
 
+<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
 
 
-	<p><a href="http://localhost/Hospital-Framework/">Home</a></p>
+
+	
 

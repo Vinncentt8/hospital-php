@@ -1,6 +1,5 @@
 <?php
-echo "<h1>" . "Je bent nu in species:" . "</h1>";
-echo "<h2>" . "Aanmaken" . "</h2>";
+echo "<h1>" . "Add specie:" . "</h1>";
 ?>
 
 <fieldset>
@@ -8,7 +7,8 @@ echo "<h2>" . "Aanmaken" . "</h2>";
 <div class="container">
     <form action="<?=URL?>species/createSave" method="post">
         <label for="person">Species</label>
-        <input required type="text" type="text" name="species_description" placeholder="Species">
+        <input required type="text" type="text" name="species_description" placeholder="Species"><br>
+        <br>
         <input type="submit" name="submit" value="Registreer Specie">
     
     </form>
@@ -19,4 +19,4 @@ echo "<h2>" . "Aanmaken" . "</h2>";
 
 
 
-    <p><a href="http://localhost/Hospital-Framework/">Home</a></p>
+  <p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
