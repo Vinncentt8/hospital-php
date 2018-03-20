@@ -24,6 +24,18 @@ function saveCreatedSpecie($save){
 	return true;
 }
 
+function updateSpecies($id)
+{
+	$db = openDatabaseConnection();
+	$sql = "UPDATE patients SET patient_name, patient_status VALUES (:patient_name, :patient_status)";
+	$query = $db->prepare($sql);
+	$query->bindParam(":name", $saves['patient_name']);
+	$query->bindParam(":name2", $saves['patient_status']);
+	header('location: ' . URL . 'patients/index');
+	$query->execute();
+	
+}
+
 
 
 function deleteSpecies($id)

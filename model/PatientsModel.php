@@ -4,7 +4,8 @@ function getPatients()
 {
 	$db = openDatabaseConnection();
 
-	$sql ="SELECT * FROM patients LEFT JOIN species ON patients.species_id = species.species_id LEFT JOIN clients ON patients.client_id = clients.client_id ";
+	$sql ="SELECT * FROM patients";
+
 	$query = $db->prepare($sql);
 	$query->execute();
 
@@ -36,4 +37,17 @@ function saveCreatedPatient($saves){
 	$query->execute();
 	return true;
 }
+
+function updatePatients($id)
+{
+	$db = openDatabaseConnection();
+	$sql = "UPDATE patients SET patient_name, patient_status VALUES (:patient_name, :patient_status)";
+	$query = $db->prepare($sql);
+	$query->bindParam(":name", $saves['patient_name']);
+	$query->bindParam(":name2", $saves['patient_status']);
+	header('location: ' . URL . 'patients/index');
+	$query->execute();
+	
+}
+
 ?>

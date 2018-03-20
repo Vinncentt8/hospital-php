@@ -25,6 +25,27 @@ function createSave()
 	header("Location:" . URL . "species/index");
 }
 
+// ---------------------------------------------------------------------------------------------
+
+function update($id)
+{
+	render("species/update", array(
+		'species' => getSpecies($id)
+	));
+}
+
+
+function updateSave()
+{
+	if (!updateSpecies()) {
+		header("Location:" . URL . "error/je bent er!");
+		exit();
+	}
+	header("Location:" . URL . "species/index");
+} 
+
+
+
 
 // ---------------------------------------------------------------------------------------------
 

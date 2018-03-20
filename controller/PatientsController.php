@@ -30,6 +30,25 @@ function createSave()
 
 // ---------------------------------------------------------------------------------------------
 
+function update($id)
+{
+	render("patients/update", array(
+		'patients' => getPatients($id)
+	));
+}
+
+
+
+function updateSave()
+{
+	if (!updateClients()) {
+		header("Location:" . URL . "error/je bent er!");
+		exit();
+	}
+	header("Location:" . URL . "patients/index");
+} 
+
+
 function delete($id)
 {
 	if (!deletePatients($id)) {

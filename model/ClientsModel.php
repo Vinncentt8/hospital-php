@@ -8,6 +8,20 @@ function getClients()
 	$db = null;
 	return $query->fetchAll();
 }
+
+function getClient($id)
+{
+	$db = openDatabaseConnection();
+	$sql ="SELECT client_id FROM clients";
+	$query = $db->prepare($sql);
+	$query->bindParam(":id", $id);
+	$query->execute();
+	$db = null;
+	return $query->fetchAll();
+}
+
+
+
 function deleteClients($id)
 {
 	$db = openDatabaseConnection();

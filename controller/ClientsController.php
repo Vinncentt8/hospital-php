@@ -38,6 +38,19 @@ function update($id)
 	));
 }
 
+// function update($id)
+// {
+// 	//$data = getClients($id);
+
+// 	//var_dump($data);
+// 	render("clients/update", $data);
+
+
+// 	render("clients/update", array(
+// 		'clients' => getClient($id)
+// 	));
+// }
+
 
 function updateSave()
 {
