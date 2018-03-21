@@ -26,9 +26,19 @@ function createSave()
 }
 
 // ---------------------------------------------------------------------------------------------
-
+	// Controleer of er een POST request binnen komt
+		// Is dat het geval, dan moet de functie updatePatients($id) worden aangeroepen 
+		// Daarna mag de pagina worden doorgestuurd naar de patient/index pagina (header location)
 function update($id)
 {
+
+	if( isset($_POST['species_description'])){
+	 updateSpecies($id);
+	 header("Location:" . URL . "species/index");
+	 exit();
+	}
+
+
 	render("species/update", array(
 		'species' => getSpecies($id)
 	));

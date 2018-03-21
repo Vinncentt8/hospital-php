@@ -4,7 +4,7 @@ function getPatients()
 {
 	$db = openDatabaseConnection();
 
-	$sql ="SELECT * FROM patients";
+	$sql ="SELECT * FROM patients LEFT JOIN species ON patients.species_id = species.species_id LEFT JOIN clients ON patients.client_id = clients.client_id";
 
 	$query = $db->prepare($sql);
 	$query->execute();
@@ -26,14 +26,13 @@ function deletePatients($id)
 	return true;
 }
 
-function saveCreatedPatient($saves){
+function saveCreatedPatient($values){
 	$db = openDatabaseConnection();
-
-	$sql = "INSERT INTO patients (patient_name, patient_status) VALUES (:patient_name, :patient_status);";
-	// var_dump($answers);
+	$sql = "INSERT INTO patients (patient_id, patient_name, patient_status) VALUES (:id, :name, :status);";
 	$query = $db->prepare($sql);
-	$query->bindParam(":patient_name", $saves['patient_name']);
-	$query->bindParam(":patient_status", $saves['patient_status']);
+	$query->bindParam(":id", $id);
+	$query->bindParam(":name", $values['patient_name']);
+	$query->bindParam(":status", $values['patient_status']);
 	$query->execute();
 	return true;
 }
@@ -41,11 +40,11 @@ function saveCreatedPatient($saves){
 function updatePatients($id)
 {
 	$db = openDatabaseConnection();
-	$sql = "UPDATE patients SET patient_name, patient_status VALUES (:patient_name, :patient_status)";
+	$sql = "UPDATE patients SET patient_name = :patient_name, patient_status = :patient_status WHERE patient_id = :patient_id";
 	$query = $db->prepare($sql);
-	$query->bindParam(":name", $saves['patient_name']);
-	$query->bindParam(":name2", $saves['patient_status']);
-	header('location: ' . URL . 'patients/index');
+	$query->bindParam(":patient_name", $save['patient_name']);
+	$query->bindParam(":patient_status", $save['patient_status']);
+	$query->bindParam(":patient_id", $id);
 	$query->execute();
 	
 }

@@ -12,6 +12,8 @@
 				<th>ID</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>Phone</th>
+				<th>Email</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
@@ -26,6 +28,8 @@ echo "<tr>";
 echo "<th>" . $client['client_id'] . "</th>";
 echo "<th>" . $client['client_firstname'] . "</th>";
 echo "<th>" . $client['client_lastname']  . "</th>";
+echo "<th>" . $client['phone'] . "</th>";
+echo "<th>" . $client['email'] . "</th>";
 echo "<td class='center'>" . "<a href='" . URL . "clients/update/" . $client['client_id'] . "'>Edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "clients/delete/" . $client['client_id'] .  "'>Delete</a></td>";
 echo "</tr>";

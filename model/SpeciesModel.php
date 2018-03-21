@@ -27,11 +27,10 @@ function saveCreatedSpecie($save){
 function updateSpecies($id)
 {
 	$db = openDatabaseConnection();
-	$sql = "UPDATE patients SET patient_name, patient_status VALUES (:patient_name, :patient_status)";
+	$sql = "UPDATE species SET species_description = :species_description WHERE species_id = :species_id";
 	$query = $db->prepare($sql);
-	$query->bindParam(":name", $saves['patient_name']);
-	$query->bindParam(":name2", $saves['patient_status']);
-	header('location: ' . URL . 'patients/index');
+	$query->bindParam(":species_description", $save['species_description']);
+	$query->bindParam(":species_id", $id);
 	$query->execute();
 	
 }

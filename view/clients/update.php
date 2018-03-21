@@ -21,12 +21,19 @@ foreach ($clients as $client) {
 ?>
 
 <div class="container">
-    <form action="<?= URL ?>patient/update" method="post">
+    <form action="<?= URL ?>patient/update/<?=$clients[0]['client_id']?>" method="post">
     	<label>Name:</label>
-        <input type="text" name="name" placeholder="john"><br>
+        <input type="text" required="text" name="name" placeholder="john"><br>
         <br>
         <label>Last name:</label>
-        <input type="text" name="name2" placeholder="doe">
+        <input type="text" required="text" name="name2" placeholder="doe"><br>
+        <br>
+        <label>Phone number:</label>
+        <input type="text" name="phone" placeholder="06......">
+        <br>
+        <br>
+        <label>Email adress:</label>
+        <input type="text" name="email" placeholder="example@hismail.com">
         <br>
         <br>
         <input type="submit" value="Edit">

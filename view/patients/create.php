@@ -6,8 +6,8 @@ echo "<h1>" . "Add patient:" . "</h1>";
 
 <div class="container">
     <form action="<?=URL?>patients/createSave" method="post">
-        <label for="person">Name:</label>
-        <input required type="text" type="text" name="patient_name" placeholder="Name"><br>
+        <label>Name:</label>
+        <input for="person" required type="text" type="text" name="patient_name" placeholder="Name"><br>
         <br>
         <label>Status:</label>
         <input required type="text" type="text" name="patient_status" placeholder="Status">

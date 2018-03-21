@@ -36,10 +36,10 @@ function deleteClients($id)
 function updateClients($id)
 {
 	$db = openDatabaseConnection();
-	$sql = "UPDATE clients SET name = :name, name2 = :name2 WHERE id = :id";
+	$sql = "UPDATE clients SET client_firstname = :client_firstname, client_lastname = :client_lastname WHERE id = :id";
 	$query = $db->prepare($sql);
-	$query->bindParam(":name", $answers['name']);
-	$query->bindParam(":name2", $answers['name2']);
+	$query->bindParam(":client_firstname", $answers['client_firstname']);
+	$query->bindParam(":client_lastname", $answers['client_lastname']);
 	header('location: ' . URL . 'clients/index');
 	$query->execute();
 	

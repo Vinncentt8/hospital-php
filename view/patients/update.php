@@ -22,12 +22,12 @@ echo "</tr>";
 ?>
 
 <div class="container">
-    <form action="<?= URL ?>patients/update" method="post">
+    <form action="<?= URL ?>patients/update/<?=$patients[0]['patient_id']?>" method="post">
     	<label>Name:</label>
-        <input type="text" name="name" placeholder="Name"><br>
+        <input type="text" required="text" name="patient_name" placeholder="Name"><br>
         <br>
         <label>Patient status:</label>
-        <input type="text" name="name2" placeholder="status">
+        <input type="text" required="text" name="patient_status" placeholder="status">
         <br>
         <br>
         <input type="submit" value="Edit patient">

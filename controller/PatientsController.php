@@ -9,13 +9,10 @@ function index()
     ));
 }
 // ---------------------------------------------------------------------------------------------
-
 function create()
 {
 	render("patients/create");
 }
-
-
 
 function createSave()
 {
@@ -32,6 +29,13 @@ function createSave()
 
 function update($id)
 {
+
+	if( isset($_POST['patients_name'])){
+	 updatePatients($id);
+	 header("Location:" . URL . "patients/index");
+	 exit();
+	}
+	
 	render("patients/update", array(
 		'patients' => getPatients($id)
 	));
@@ -41,7 +45,7 @@ function update($id)
 
 function updateSave()
 {
-	if (!updateClients()) {
+	if (!updatePatients($id)) {
 		header("Location:" . URL . "error/je bent er!");
 		exit();
 	}

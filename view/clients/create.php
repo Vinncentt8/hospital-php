@@ -13,7 +13,14 @@ echo "<h1>" . "Create clients:" . "</h1>";
         <input required type="text" type="text" name="client_firstname" placeholder="Name"><br>
         <br>
         <label>Last name</label>
-        <input required type="text" type="text" name="client_lastname" placeholder="Last name">
+        <input required type="text" type="text" name="client_lastname" placeholder="Last name"><br>
+        <br>
+        <label>Phone number:</label>
+        <input type="text" name="phone" placeholder="06......">
+        <br>
+        <br>
+        <label>Email adress:</label>
+        <input type="text" name="email" placeholder="example@hismail.com">
         <br>
         <br>
         <input type="submit" name="submit" value="Registreer Client">

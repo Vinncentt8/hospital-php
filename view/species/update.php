@@ -20,9 +20,9 @@ foreach ($species as $specie) {
 ?>
 
 <div class="container">
-    <form action="<?= URL ?>species/update" method="post">
+   <form action="<?= URL ?>species/update/<?=$species[0]['species_id']?>" method="post">
     	<label>Species:</label>
-        <input type="text" name="name" placeholder="Species"><br>
+        <input type="text" required="text" name="name" placeholder="Species"><br>
         <br>
         <br>
         <input type="submit" value="Edit">
