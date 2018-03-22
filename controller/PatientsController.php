@@ -45,7 +45,7 @@ function update($id)
 
 function updateSave()
 {
-	if (!updatePatients($id)) {
+	if (!updateClients()) {
 		header("Location:" . URL . "error/je bent er!");
 		exit();
 	}

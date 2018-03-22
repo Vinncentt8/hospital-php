@@ -48,13 +48,15 @@ function updateClients($id)
 function saveCreatedClient($values){
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO clients (client_firstname, client_lastname) VALUES (:client_firstname, :client_lastname);";
+	$sql = "INSERT INTO clients (client_firstname, client_lastname, phone, email) VALUES (:client_firstname, :client_lastname, :phone, :email);";
 	// var_dump($answers);
 
 	//"INSERT INTO birthdays WHERE id = :id";
 	$query = $db->prepare($sql);
 	$query->bindParam(":client_firstname", $values['client_firstname']);
 	$query->bindParam(":client_lastname", $values['client_lastname']);
+	$query->bindParam(":phone", $values['phone']);
+	$query->bindParam(":email", $values['email']);
 	$query->execute();
 	return true;
 }
