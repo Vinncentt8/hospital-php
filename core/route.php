@@ -13,7 +13,7 @@ function route()
 	// Als dat niet het geval is, dus als er wel een controller is, kijkt hij of het bestand bestaat. 
 	//	Vervolgens laad hij dat bestand in
 	} elseif (file_exists(ROOT . 'controller/' . $url['controller'] . '.php')) {
-		require(ROOT . 'controller/' . $url['controller'] . '.php');
+		require_once(ROOT . 'controller/' . $url['controller'] . '.php');
 		// Vervolgens wordt er gekeken of er een functie met de naam bestaat die in de key action zit. 
 		// Bijvoorbeeld: http://localhost/Students/Edit/1, dan is de action Edit. 
 		// De 1 wordt als eerste 'params' geplaatst
@@ -28,12 +28,12 @@ function route()
 			}
 		} else {
 			// Wanneer de action niet bestaat, wordt de errorpagina getoond
-			require(ROOT . 'controller/ErrorController.php');
+			require_once(ROOT . 'controller/ErrorController.php');
 			call_user_func('error_404');
 		}
 	} else {
 		// Wanneer de controller niet bestaat, wordt de errorpagina getoond
-		require(ROOT . 'controller/ErrorController.php');
+		require_once(ROOT . 'controller/ErrorController.php');
 		call_user_func('error_404');
 	}
 }

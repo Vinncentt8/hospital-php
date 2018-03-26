@@ -5,7 +5,7 @@ require(ROOT . "model/ClientsModel.php");
 function index()
 {
     render("clients/overview", array(
-        'clients' => getClients()
+        'clients' => getAllClients()
     ));
 }
 
@@ -31,16 +31,18 @@ function createSave()
 
 function update($id)
 {
+	$client = getClient($id);
 	render("clients/update", array(
-		'clients' => getClients($id)
+		'client' => $client
 	));
 }
 
 
 function updateSave()
 {
-	if (!updateClients()) {
-		header("Location:" . URL . "error/je bent er!");
+
+	if (!updateClient($_POST)) {
+		header("Location:" . URL . "error/Error_update");
 		exit();
 	}
 	header("Location:" . URL . "clients/index");

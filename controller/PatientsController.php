@@ -5,7 +5,7 @@ require(ROOT . "model/PatientsModel.php");
 function index()
 {
     render("patients/overview", array(
-        'patients' => getPatients()
+        'patients' => getAllPatients()
     ));
 }
 // ---------------------------------------------------------------------------------------------
@@ -29,24 +29,17 @@ function createSave()
 
 function update($id)
 {
-
-	if( isset($_POST['patients_name'])){
-	 updatePatients($id);
-	 header("Location:" . URL . "patients/index");
-	 exit();
-	}
-	
+	$patient = getPatient($id);
 	render("patients/update", array(
-		'patients' => getPatients($id)
+		'patient' => $patient
 	));
 }
 
 
-
 function updateSave()
 {
-	if (!updateClients()) {
-		header("Location:" . URL . "error/je bent er!");
+	if (!updatePatients($_POST)) {
+		header("Location:" . URL . "error/Error_update");
 		exit();
 	}
 	header("Location:" . URL . "patients/index");

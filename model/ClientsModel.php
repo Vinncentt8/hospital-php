@@ -1,5 +1,5 @@
 <?php
-function getClients()
+function getAllClients()
 {
 	$db = openDatabaseConnection();
 	$sql ="SELECT * FROM clients";
@@ -12,14 +12,13 @@ function getClients()
 function getClient($id)
 {
 	$db = openDatabaseConnection();
-	$sql ="SELECT client_id FROM clients";
+	$sql ="SELECT * FROM clients WHERE client_id = :id";
 	$query = $db->prepare($sql);
 	$query->bindParam(":id", $id);
 	$query->execute();
 	$db = null;
-	return $query->fetchAll();
+	return $query->fetch(PDO::FETCH_ASSOC);
 }
-
 
 
 function deleteClients($id)
@@ -33,15 +32,18 @@ function deleteClients($id)
 }
 
 
-function updateClients($id)
+function updateClient($answers)
 {
 	$db = openDatabaseConnection();
-	$sql = "UPDATE clients SET client_firstname = :client_firstname, client_lastname = :client_lastname WHERE id = :id";
+	$sql = "UPDATE clients SET client_firstname = :client_firstname, client_lastname = :client_lastname, phone = :phone, email = :email WHERE client_id = :client_id";
 	$query = $db->prepare($sql);
-	$query->bindParam(":client_firstname", $answers['client_firstname']);
-	$query->bindParam(":client_lastname", $answers['client_lastname']);
-	header('location: ' . URL . 'clients/index');
+	$query->bindParam(":client_firstname", $answers['name']);
+	$query->bindParam(":client_lastname", $answers['name2']);
+	$query->bindParam(":phone", $answers['phone']);
+	$query->bindParam(":email", $answers['email']);
+	$query->bindParam(":client_id", $answers['client_id']);
 	$query->execute();
+	return true;
 	
 }
 

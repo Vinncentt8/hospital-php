@@ -1,41 +1,23 @@
 <fieldset>
-	<h2>Update client</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>First name</th>
-				<th>Last name</th>
-			</tr>
-		</thead>
-		</tbody>
 
-<?php
-foreach ($clients as $client) {
-	echo "<tr>";
-	echo "<th>" . $client['client_id'] . "</th>";
-	echo "<th>" . $client['client_firstname'] . "</th>";
-	echo "<th>" . $client['client_lastname']  . "</th>";
-	echo "</tr>";
-}
-?>
 
 <div class="container">
-    <form action="<?= URL ?>patient/update/<?=$clients[0]['client_id']?>" method="post">
+    <form action="<?= URL ?>clients/updateSave/<?=$client['client_id']?>" method="post">
     	<label>Name:</label>
-        <input type="text" required="text" name="name" placeholder="john"><br>
+        <input type="text" required="text" value="<?= $client['client_firstname'] ?>" name="name" placeholder="john"><br>
         <br>
         <label>Last name:</label>
-        <input type="text" required="text" name="name2" placeholder="doe"><br>
+        <input type="text" required="text" value="<?= $client['client_lastname'] ?>" name="name2" placeholder="doe"><br>
         <br>
         <label>Phone number:</label>
-        <input type="text" name="phone" placeholder="06......">
+        <input type="text" name="phone" value="<?= $client['phone'] ?>" placeholder="06......">
         <br>
         <br>
         <label>Email adress:</label>
-        <input type="text" name="email" placeholder="example@hismail.com">
+        <input type="text" name="email" value="<?= $client['email'] ?>" placeholder="example@hismail.com">
         <br>
         <br>
+         <input type="hidden" name="client_id" value="<?=$client['client_id']?>">
         <input type="submit" value="Edit">
     
     </form>

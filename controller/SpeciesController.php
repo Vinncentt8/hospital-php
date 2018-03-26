@@ -19,10 +19,10 @@ function create()
 function createSave()
 {
 	if (!saveCreatedSpecie($_POST)) {
-		header("Location:" . URL . "error/index");
+		//header("Location:" . URL . "error/index");
 		exit();
 	}
-	header("Location:" . URL . "species/index");
+	//header("Location:" . URL . "species/index");
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -32,26 +32,20 @@ function createSave()
 function update($id)
 {
 
-	if( isset($_POST['species_description'])){
-	 updateSpecies($id);
-	 header("Location:" . URL . "species/index");
-	 exit();
-	}
-
-
+	$species = getAllSpecies($id);
 	render("species/update", array(
-		'species' => getSpecies($id)
+		'specie' => $species
 	));
 }
 
 
 function updateSave()
 {
-	if (!updateSpecies()) {
-		header("Location:" . URL . "error/je bent er!");
+	if (!updateSpecies($_POST)) {
+		//header("Location:" . URL . "error/je bent er!");
 		exit();
 	}
-	header("Location:" . URL . "species/index");
+	//header("Location:" . URL . "species/index");
 } 
 
 
