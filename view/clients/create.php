@@ -1,11 +1,9 @@
-<fieldset>
-
-
 <?php
 echo "<h1>" . "Create clients:" . "</h1>";
 ?>
 
 
+<fieldset>
 
 <div class="container">
     <form action="<?=URL?>clients/createSave" method="post">

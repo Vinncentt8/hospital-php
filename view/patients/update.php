@@ -1,3 +1,8 @@
+<?php
+echo "<h1>" . "Update Patient:" . "</h1>";
+?>
+
+
 <fieldset>
 
 
