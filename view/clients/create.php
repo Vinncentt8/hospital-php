@@ -14,7 +14,7 @@ echo "<h1>" . "Create clients:" . "</h1>";
         <input required type="text" type="text" name="client_lastname" placeholder="Last name"><br>
         <br>
         <label>Phone number:</label>
-        <input type="text" name="phone" placeholder="06......">
+        <input type="text" min="10" max="10" name="phone" placeholder="06......">
         <br>
         <br>
         <label>Email adress:</label>

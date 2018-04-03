@@ -16,7 +16,7 @@ echo "<h1>" . "Update client:" . "</h1>";
         <input type="text" required="text" value="<?= $client['client_lastname'] ?>" name="name2" placeholder="doe"><br>
         <br>
         <label>Phone number:</label>
-        <input type="text" name="phone" value="<?= $client['phone'] ?>" placeholder="06......">
+        <input type="text" name="phone" min="10" max="10" value="<?= $client['phone'] ?>" placeholder="06......">
         <br>
         <br>
         <label>Email adress:</label>
