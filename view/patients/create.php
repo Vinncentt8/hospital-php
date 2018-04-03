@@ -14,7 +14,7 @@ echo "<h1>" . "Add patient:" . "</h1>";
         <br>
         <br>
         <label>Species:</label>
-        <select>
+        <select name="species_id">
             <?php foreach ($species as $specie) { ?>
                <option value="<?= $specie['species_id']?>"><?= $specie['species_description']?></option>
            <?php } ?>
@@ -22,9 +22,9 @@ echo "<h1>" . "Add patient:" . "</h1>";
         <br>
         <br>
         <label>Client</label>
-        <select>
+        <select name="client_id">
             <?php foreach ($clients as $client) { ?>
-            <option value="<?= $client['client_id']?>"><?= $client['client_firstname']?></option>
+            <option value="<?= $client['client_id']?>"><?= $client['client_firstname']?> <?= " " ?><?= $client['client_lastname']?></option>
             <?php } ?>
         </select>
         <br>

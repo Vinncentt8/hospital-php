@@ -13,6 +13,7 @@ function index()
 // ---------------------------------------------------------------------------------------------
 function create()
 {	
+	
 	render("patients/create", array( 
 	'species' => getAllSpecies(),
 	'clients' => getAllClients()
@@ -21,6 +22,9 @@ function create()
 
 function createSave()
 {
+	
+	var_dump($_POST);
+	echo "PatientsController: createSave";
 	if (!saveCreatedPatient($_POST)) {
 		header("Location:" . URL . "error/index");
 		exit();

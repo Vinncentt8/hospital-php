@@ -10,6 +10,7 @@ function index()
 }
 
 // ---------------------------------------------------------------------------------------------
+
 function create()
 {
 	render("species/create");
@@ -29,7 +30,7 @@ function createSave()
 	// Controleer of er een POST request binnen komt
 		// Is dat het geval, dan moet de functie updatePatients($id) worden aangeroepen 
 		// Daarna mag de pagina worden doorgestuurd naar de patient/index pagina (header location)
-function update()
+function update($id)
 {
 	render("species/update", array(
 		'species' =>  getAllSpecies()
@@ -45,9 +46,6 @@ function updateSave()
 	}
 	header("Location:" . URL . "species/index");
 } 
-
-
-
 
 // ---------------------------------------------------------------------------------------------
 
