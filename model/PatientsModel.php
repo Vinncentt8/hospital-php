@@ -55,14 +55,14 @@ function updatePatients($save){
 function saveCreatedPatient($values){
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO patients (patient_name, species_description, patient_status, client_firstname, client_lastname ) VALUES (:patient_name, :species_description, :patient_status, :client_firstname, :client_lastname )";
+	$sql = "INSERT INTO patients (patient_name, species_id, client_id, patient_status) VALUES (:patient_name, :species_id, :client_id, :patient_status)";
+
+	var_dump($values);
 	$query = $db->prepare($sql);
 	$query->bindParam(":patient_name", $values['patient_name']);
-	$query->bindParam(":species_description", $values['species_description']);
+	$query->bindParam(":species_id", $values['species_id']);
+	$query->bindParam(":client_id", $values['client_id']);
 	$query->bindParam(":patient_status", $values['patient_status']);
-	$query->bindParam(":client_firstname", $values['client_firstname']);
-	$query->bindparam(":client_lastname", $values['client_lastname']);
-	$query->execute();
 	return true;
 }
 

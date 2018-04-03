@@ -1,6 +1,8 @@
 <?php
 
-require(ROOT . "model/PatientsModel.php");
+require(ROOT . "model/patientsModel.php");
+require(ROOT . "model/speciesModel.php");
+require(ROOT . "model/clientsModel.php");
 
 function index()
 {
@@ -10,8 +12,11 @@ function index()
 }
 // ---------------------------------------------------------------------------------------------
 function create()
-{
-	render("patients/create");
+{	
+	render("patients/create", array( 
+	'species' => getAllSpecies(),
+	'clients' => getAllClients()
+	));
 }
 
 function createSave()
