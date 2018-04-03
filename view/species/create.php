@@ -7,8 +7,9 @@ echo "<h1>" . "Add specie:" . "</h1>";
 <div class="container">
     <form action="<?=URL?>species/createSave" method="post">
         <label for="person">Species</label>
-        <input required type="text" type="text" name="species_description" placeholder="Species"><br>
+        <input required type="text" name="species_description" placeholder="Species"><br>
         <br>
+        <input type="hidden" name="species_id" value="species_id">
         <input type="submit" name="submit" value="Registreer Specie">
     
     </form>

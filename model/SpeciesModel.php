@@ -27,6 +27,7 @@ function getSpecies($id)
 function saveCreatedSpecie($values){
 	$db = openDatabaseConnection();
 
+	var_dump($_POST);
 	$sql = "INSERT INTO species (species_description) VALUES (:species_description);";
 	$query = $db->prepare($sql);
 	$query->bindParam(":species_description", $save['species_description']);
@@ -34,7 +35,7 @@ function saveCreatedSpecie($values){
 	return true;
 }
 
-function updateSpecies()
+function updateSpecies($save)
 {
 	$db = openDatabaseConnection();
 	$sql = "UPDATE species SET species_description = :species_description WHERE species_id = :species_id";
