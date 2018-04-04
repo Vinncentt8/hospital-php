@@ -10,6 +10,7 @@
 		<thead>
 			<tr>
 				<th>Name</th>
+				<th>Gender</th>
 				<th>Status</th>
 				<th colspan="2">Action</th>
 			</tr>
@@ -23,7 +24,9 @@
 foreach ($patients as $patient) {
 echo "<tr>";
 echo "<th>" . $patient['patient_name'] . "</th>";
+echo "<th>" . "?" . "</th>";
 echo "<th>" . $patient['patient_status']  . "</th>";
+
 echo "<td class='center'>" . "<a href='" . URL . "patients/update/" . $patient['patient_id'] . "'>Edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "patients/delete/". $patient['patient_id'] ."'>Delete</a></td>";
 echo "</tr>";
