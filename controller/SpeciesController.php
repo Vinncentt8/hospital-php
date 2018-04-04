@@ -1,6 +1,8 @@
 <?php
 
 require(ROOT . "model/SpeciesModel.php");
+require(ROOT . "model/PatientsModel.php");
+require(ROOT . "model/ClientsModel.php");
 
 function index()
 {
@@ -33,7 +35,8 @@ function createSave()
 function update($id)
 {
 	render("species/update", array(
-		'species' =>  getAllSpecies()
+		'data' =>  getSpecies($id)
+		
 ));
 }
 

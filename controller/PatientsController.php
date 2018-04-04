@@ -39,7 +39,9 @@ function update($id)
 {
 	$patient = getPatient($id);
 	render("patients/update", array(
-		'patient' => $patient
+		'patient' => $patient,
+		'species' => getAllSpecies(),
+	'clients' => getAllClients()
 	));
 }
 

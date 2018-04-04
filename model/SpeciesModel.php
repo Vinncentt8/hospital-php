@@ -24,24 +24,23 @@ function getSpecies($id)
 
 }
 
-function saveCreatedSpecie($values){
+function saveCreatedSpecie($save){
 	$db = openDatabaseConnection();
 
-	var_dump($_POST);
 	$sql = "INSERT INTO species (species_description) VALUES (:species_description);";
 	$query = $db->prepare($sql);
 	$query->bindParam(":species_description", $save['species_description']);
-	$query->bindParam(":id", $id);
+	$query->execute();
 	return true;
 }
 
-function updateSpecies($save)
+function updateSpecies($data)
 {
 	$db = openDatabaseConnection();
 	$sql = "UPDATE species SET species_description = :species_description WHERE species_id = :species_id";
 	$query = $db->prepare($sql);
-	$query->bindParam(":species_description", $save['species_description']);
-	$query->bindParam(":species_id", $save['species_id']);
+	$query->bindParam(":species_description", $data['species_description']);
+	$query->bindParam(":species_id", $data['species_id']);
 	$query->execute();
 	return true;
 	
