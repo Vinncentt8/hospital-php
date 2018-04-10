@@ -14,11 +14,11 @@ echo "<h1>" . "Create clients:" . "</h1>";
         <input required type="text" type="text" name="client_lastname" placeholder="Last name"><br>
         <br>
         <label>Phone number:</label>
-        <input type="text" min="10" max="10" name="phone" placeholder="06......">
+        <input required type="text" min="0" max="10" name="phone" placeholder="06......">
         <br>
         <br>
         <label>Email adress:</label>
-        <input type="text" name="email" placeholder="example@hismail.com">
+        <input required type="text" name="email" placeholder="example@hismail.com">
         <br>
         <br>
         <input type="submit" name="submit" value="Registreer Client">
@@ -29,7 +29,7 @@ echo "<h1>" . "Create clients:" . "</h1>";
 
 </fieldset>
 
-<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
+<p><a href="http://localhost/Hospital-Framework/clients/index">Back to home</a></p>
 
 
 

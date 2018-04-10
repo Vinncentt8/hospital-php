@@ -28,9 +28,11 @@ echo "<h1>" . "Add patient:" . "</h1>";
                <option value="<?= $specie['species_id']?>"><?= $specie['species_description']?></option>
            <?php } ?>
         </select>
-        <input type="radio" name="radio" value="male" class="radio" <?php if (isset($_POST['radio']) && $_POST['radio'] == 'yes'): ?>checked='checked'<?php endif; ?> /> Male
-
-        <input type="radio" name="radio" value="female"  class="radio" <?php if (isset($_POST['radio']) && $_POST['radio'] ==  'no'): ?>checked='checked'<?php endif; ?> /> Female
+        <br>
+        <br>
+        <label>Gender:</label>
+        <input required type="radio" name="gender" value="Male"> Male
+        <input required type="radio" name="gender" value="Female"> Female
         <br>
         <br>
         <input type="submit" name="submit" value="Registreer Patient">
@@ -42,4 +44,4 @@ echo "<h1>" . "Add patient:" . "</h1>";
 
 
 
-	<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
+	<p><a href="http://localhost/Hospital-Framework/patients/index">Back to home</a></p>

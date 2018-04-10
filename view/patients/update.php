@@ -33,9 +33,11 @@ echo "<h1>" . "Update Patient:" . "</h1>";
         <br>
         <br>
         <input type="hidden" name="patient_id" value="<?=$patient['patient_id']?>">
-        <input type="radio" name="radio" value="male" class="radio" <?php if (isset($_POST['radio']) && $_POST['radio'] == 'yes'): ?>checked='checked'<?php endif; ?> /> Male
-
-        <input type="radio" name="radio" value="female"  class="radio" <?php if (isset($_POST['radio']) && $_POST['radio'] ==  'no'): ?>checked='checked'<?php endif; ?> /> Female
+        <br>
+        <br>
+        <label>Gender:</label>
+        <input required type="radio" name="gender" value="Male"> Male
+        <input required type="radio" name="gender" value="Female"> Female
         <br>
         <br>
         <input type="submit" value="Edit patient">
@@ -46,4 +48,4 @@ echo "<h1>" . "Update Patient:" . "</h1>";
 
 </fieldset>
 
-	<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
+	<p><a href="http://localhost/Hospital-Framework/patients/index">Back to home</a></p>

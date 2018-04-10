@@ -21,8 +21,8 @@
 
 foreach ($species as $specie) {
 echo "<tr>";
-echo "<th>" . $specie['species_id'] . "</th>";
-echo "<th>" . $specie['species_description']  . "</th>";
+echo "<td>" . $specie['species_id'] . "</td>";
+echo "<td>" . $specie['species_description']  . "</td>";
 echo "<td class='center'>" . "<a href='" . URL . "species/update/" . $specie['species_id'] . "'>Edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "species/delete/". $specie['species_id'] . "'>Delete</a></td>";
 echo "</tr>";

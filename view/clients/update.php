@@ -10,17 +10,17 @@ echo "<h1>" . "Update client:" . "</h1>";
 <div class="container">
     <form action="<?= URL ?>clients/updateSave/<?=$client['client_id']?>" method="post">
     	<label>Name:</label>
-        <input type="text" required="text" value="<?= $client['client_firstname'] ?>" name="name" placeholder="john"><br>
+        <input  required type="text" required="text" value="<?= $client['client_firstname'] ?>" name="name" placeholder="john"><br>
         <br>
         <label>Last name:</label>
-        <input type="text" required="text" value="<?= $client['client_lastname'] ?>" name="name2" placeholder="doe"><br>
+        <input required type="text" required="text" value="<?= $client['client_lastname'] ?>" name="name2" placeholder="doe"><br>
         <br>
         <label>Phone number:</label>
-        <input type="text" name="phone" min="10" max="10" value="<?= $client['phone'] ?>" placeholder="06......">
+        <input required type="tel" name="phone" min="10" max="10" value="<?= $client['phone'] ?>" placeholder="06......">
         <br>
         <br>
         <label>Email adress:</label>
-        <input type="text" name="email" value="<?= $client['email'] ?>" placeholder="example@hismail.com">
+        <input required type="text" name="email" value="<?= $client['email'] ?>" placeholder="example@hismail.com">
         <br>
         <br>
          <input type="hidden" name="client_id" value="<?=$client['client_id']?>">
@@ -36,4 +36,4 @@ echo "<h1>" . "Update client:" . "</h1>";
 
 
 
-	<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
+	<p><a href="http://localhost/Hospital-Framework/clients/index">Back to home</a></p>

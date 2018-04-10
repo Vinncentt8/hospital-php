@@ -24,4 +24,4 @@ echo "<h1>" . "Edit specie:" . "</h1>";
 
 
 
-	<p><a href="http://localhost/Hospital-Framework/">Back to home</a></p>
+	<p><a href="http://localhost/Hospital-Framework/species/index">Back to home</a></p>

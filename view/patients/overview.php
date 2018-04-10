@@ -6,7 +6,7 @@
 	</ul>
 
 	<h2>Patiënts</h2>
-	<table>
+	<table class="tablesorter">
 		<thead>
 			<tr>
 				<th>Name</th>
@@ -15,7 +15,8 @@
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
-		</tbody>
+		<tbody>
+
 
 
 <?php
@@ -23,9 +24,9 @@
 
 foreach ($patients as $patient) {
 echo "<tr>";
-echo "<th>" . $patient['patient_name'] . "</th>";
-echo "<th>" . "?" . "</th>";
-echo "<th>" . $patient['patient_status']  . "</th>";
+echo "<td>" . $patient['patient_name'] . "</td>";
+echo "<td>" . $patient['gender'] . "</td>";
+echo "<td>" . $patient['patient_status']  . "</td>";
 
 echo "<td class='center'>" . "<a href='" . URL . "patients/update/" . $patient['patient_id'] . "'>Edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "patients/delete/". $patient['patient_id'] ."'>Delete</a></td>";
@@ -34,8 +35,8 @@ echo "</tr>";
 
 ?>
 
+</tbody>
 </table>
-
 
 		<p><a href="http://localhost/Hospital-Framework/patients/create">Create</a></p>
 		<p><a href="http://localhost/Hospital-Framework/">Home</a></p>

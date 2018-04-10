@@ -5,8 +5,10 @@
 		<li><a href="http://localhost/Hospital-Framework/species/index">Species</a></li>
 	</ul>
 
+
+
 	<h2>Clients</h2>
-	<table>
+	<table  class="tablesorter">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -16,25 +18,26 @@
 				<th>Email</th>
 				<th colspan="2">Action</th>
 			</tr>
+
 		</thead>
-		</tbody>
 
-
+<tbody>
 <?php
 
 
 foreach ($clients as $client) {
 echo "<tr>";
-echo "<th>" . $client['client_id'] . "</th>";
-echo "<th>" . $client['client_firstname'] . "</th>";
-echo "<th>" . $client['client_lastname']  . "</th>";
-echo "<th>" . $client['phone'] . "</th>";
-echo "<th>" . $client['email'] . "</th>";
+echo "<td>" . $client['client_id'] . "</td>";
+echo "<td>" . $client['client_firstname'] . "</td>";
+echo "<td>" . $client['client_lastname']  . "</td>";
+echo "<td>" . $client['phone'] . "</td>";
+echo "<td>" . $client['email'] . "</td>";
 echo "<td class='center'>" . "<a href='" . URL . "clients/update/" . $client['client_id'] . "'>Edit</a></td>";
 echo "<td class='center'>" . "<a href='" . URL . "clients/delete/" . $client['client_id'] .  "'>Delete</a></td>";
 echo "</tr>";
 }
 ?>
+</tbody>
 
 </table>
 
