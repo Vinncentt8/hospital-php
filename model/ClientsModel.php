@@ -2,7 +2,7 @@
 function getAllClients()
 {
 	$db = openDatabaseConnection();
-	$sql ="SELECT * FROM clients";
+	$sql ="SELECT * FROM clients ORDER BY client_firstname, client_lastname ASC";
 	$query = $db->prepare($sql);
 	$query->execute();
 	$db = null;

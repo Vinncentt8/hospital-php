@@ -23,7 +23,7 @@ function create()
 function createSave()
 {
 	
-	var_dump($_POST);
+	
 	if (!saveCreatedPatient($_POST)) {
 		header("Location:" . URL . "error/index");
 		exit();

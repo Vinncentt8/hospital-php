@@ -4,7 +4,7 @@ function getAllSpecies()
 {
 	$db = openDatabaseConnection();
 
-	$sql ="SELECT * FROM species";
+	$sql ="SELECT * FROM species ORDER BY species_description ASC";
 	$query = $db->prepare($sql);
 	$query->execute();
 	$db = null;

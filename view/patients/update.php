@@ -35,9 +35,9 @@ echo "<h1>" . "Update Patient:" . "</h1>";
         <input type="hidden" name="patient_id" value="<?=$patient['patient_id']?>">
         <br>
         <br>
-        <label>Gender:</label>
-        <input required type="radio" name="gender" value="Male"> Male
-        <input required type="radio" name="gender" value="Female"> Female
+        <label>Gender:</label>          <!-- Werkt niet -->
+        <input required type="radio" name="gender" id="1" value="Male"     <?php if($patient['gender'] == "Male"){ echo ' checked'; } ?>/>Male 
+        <input required type="radio" name="gender" id="2" value="Female"   <?php if($patient['gender'] == "Female"){echo ' checked'; } ?>/>Female
         <br>
         <br>
         <input type="submit" value="Edit patient">
